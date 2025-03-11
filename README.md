@@ -28,8 +28,15 @@ classDiagram
   class Account {
     -String number
     -String agency
-    -Number balance
-    -Number limit
+    -double balance
+    -double limit
+    -Investment[] investments
+  }
+
+  class Investment {
+    -String type
+    -double amount
+    -double interestRate
   }
 
   class Feature {
@@ -39,7 +46,7 @@ classDiagram
 
   class Card {
     -String number
-    -Number limit
+    -double limit
   }
 
   class News {
@@ -51,6 +58,7 @@ classDiagram
   User "1" *-- "N" Feature
   User "1" *-- "1" Card
   User "1" *-- "N" News
+  Account "1" *-- "N" Investment
 ```
 
 ## IMPORTANTE
